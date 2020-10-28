@@ -1,0 +1,14 @@
+body, html{ 
+    height: 100%;
+}
+.bg-style {
+    background-image: url("https://www.abajournal.com/images/main_images/shutterstock_democrat_republican_symbol_on_flag_background.jpg") !important; 
+    
+    height: 100%;
+
+    width: 100%;
+
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center center;
+ }
