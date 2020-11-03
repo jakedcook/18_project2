@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="body-styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <title>analytics</title>
 </head>
 <body>
@@ -72,9 +73,127 @@
               </div>
             </div>
           </div>
-       
-    
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="well">
+                <canvas id="line-chart"></canvas>
+                  <script>new Chart(document.getElementById("line-chart"), {
+                          type: 'line',
+                          data: {
+                          labels: [2010,2011,2012,2013,2014,2015,2016,2017,2018,2019],
+                          datasets: [{ 
+                            data: [86,114,106,106,107,111,133,221,783,2478],
+                            label: "Africa",
+                            fontColor: 'antiquewhtie',
+                            borderColor: "#3cba9f",
+                            fill: false
+                              }]
+                          },
+                          options: {
+                            legend:{
+                              labels: {
+                                fontColor: 'antiquewhite'
+                                      }
+                                    },
+                            title: {
+                              display: true,
+                              text: 'Unemployment Rate',
+                              fontColor: 'antiquewhite'
+                            }
+                          }
+                    });</script>
+                </div>
               </div>
+                <div class="col-sm-6">
+                  <div class="well">
+                    <canvas id="line-chart2"></canvas>
+                      <script>new Chart(document.getElementById("line-chart2"), {
+                              type: 'line',
+                              data: {
+                              labels: [2010,2011,2012,2013,2014,2015,2016,2017,2018,2019],
+                              datasets: [{ 
+                                data: [86,114,106,106,107,111,133,221,783,2478],
+                                label: "Africa",
+                                borderColor: "#3cba9f",
+                                fill: false
+                                  }]
+                              },
+                              options: {
+                                legend:{
+                              labels: {
+                                fontColor: 'antiquewhite'
+                                      }
+                                    },
+                                title: {
+                                  display: true,
+                                  text: 'State Population',
+                                  fontColor: 'antiquewhite'
+                                }
+                              }
+                        });</script>
+                    </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="well">
+                    <canvas id="line-chart3"></canvas>
+                      <script>new Chart(document.getElementById("line-chart3"), {
+                              type: 'line',
+                              data: {
+                              labels: [2010,2011,2012,2013,2014,2015,2016,2017,2018,2019],
+                              datasets: [{ 
+                                data: [86,114,106,106,107,111,133,221,783,2478],
+                                label: "Africa",
+                                borderColor: "#3cba9f",
+                                fill: false
+                                  }]
+                              },
+                              options: {
+                                legend:{
+                              labels: {
+                                fontColor: 'antiquewhite'
+                                      }
+                                    },
+                                title: {
+                                  display: true,
+                                  text: 'Poverty Rate',
+                                  fontColor: 'antiquewhite'
+                                }
+                              }
+                        });</script>
+                    </div>
+                  </div>
+                    <div class="col-sm-6">
+                      <div class="well">
+                        <canvas id="line-chart4"></canvas>
+                          <script>new Chart(document.getElementById("line-chart4"), {
+                                  type: 'line',
+                                  data: {
+                                  labels: [2010,2011,2012,2013,2014,2015,2016,2017,2018,2019],
+                                  datasets: [{ 
+                                    data: [86,114,106,106,107,111,133,221,783,2478],
+                                    label: "Africa",
+                                    borderColor: "#3cba9f",
+                                    fill: false
+                                      }]
+                                  },
+                                  options: {
+                                    legend:{
+                              labels: {
+                                fontColor: 'antiquewhite'
+                                      }
+                                    },
+                                    title: {
+                                      display: true,
+                                      text: 'Legislation Control',
+                                      fontColor: 'antiquewhite'
+                                    }
+                                  }
+                            });</script>
+                        </div>
+                      </div>
+                  </div>
             </div>
           </div>
         </div>
@@ -93,7 +212,7 @@
    
            width: 100%;
    
-           background-repeat: no-repeat; 
+           background-repeat: repeat; 
            background-size: cover; 
            background-position: center center;
        } 
@@ -119,6 +238,7 @@
      .well{
          background-color: #0c060628;
      }
+     
    </style>
 </style>
 </html>

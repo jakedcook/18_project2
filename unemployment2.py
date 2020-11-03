@@ -25,6 +25,6 @@ for series in json_data['Results']['series']:
             if footnote:
                 footnotes = footnotes + footnote['text'] + ','
             if 'M01' == period <= 'M01':
-        output = open(seriesId + '.csv','w')
-        output.write (x.get_string())
-        output.close()
+                output = open(seriesId + '.csv','w')
+                output.write (x.get_string())
+                output.close()
