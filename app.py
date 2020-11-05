@@ -1,15 +1,11 @@
-from flask import Flask, render_template
-from sqlalchemy import create_engine
-
-#path to sql database
-#database_path = 'postgres+psycopg2://postgres:postgres:@http://127.0.0.1:54491/'
-
-#create an engine to the database
-#engine = create_engine(f"sqlite:///{database_path}")
+from flask import Flask, render_template, request, flash, redirect
+import cgi, cgitb
+from actions import sql_data_from_input
+import json
 
 state_list = ['Alabama','Alaska','Arizona'
 ,'Arkansas','California','Colorado','Connecticut','Delaware','Florida'
-,'Georgia','Hawaii','Idaho','IllinoisIndiana','Iowa','Kansas','Kentucky','Louisiana','Maine'
+,'Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine'
 ,'Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri'
 ,'Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina'
 ,'North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania', 'Rhode Island','South Carolina','South Dakota'
@@ -21,6 +17,14 @@ app = Flask(__name__)
 def index():
   return render_template("index.html")
 
+@app.route("/", methods=['POST'])
+def action_page():
+  searchterm = request.form['state_name']
+  if searchterm in state_list:
+    result = sql_data_from_input(searchterm)
+    return render_template('analytics.html', data=result)
+  else: 
+    return render_template("index.html")
 
 @app.route("/analytics")
 def analytics():

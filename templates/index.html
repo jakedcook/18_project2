@@ -11,7 +11,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="bg-style">
+    <div class="parallax">
         
         <nav class="navbar navbar-inverse">
           <div class="container-fluid">
@@ -40,24 +40,18 @@
               <p>Here you can vizualize the poverty rate, unemployement rate, population, and government party over the last 10 years</p>
               <hr>
               <div class="container-fluid">
-                  <form action="/action_page.php">
+                  <form action="" method="POST">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="state name" name="state">
+                        <input class="form-control" type="text" placeholder="state name ex. Texas not texas" name="state_name">
                             <div class="input-group-btn">
-                                <a class="btn btn-default" href="{{ url_for('analytics') }}" type="submit"><i class="glyphicon glyphicon-search"></i></a>
+                                <button class="btn btn-default" type="onsubmit" action="" method="POST"><i class="glyphicon glyphicon-search"></i></button>
+                             
                             </div>
+                        </div>
+                        </form>
                     </div>
-                </form>
                 </div>
-            </div>
-            <div class="col-sm-2 sidenav">
-              <div class="well">
-                <p>ADS</p>
-              </div>
-              <div class="well">
-                <p>ADS</p>
-              </div>
-            </div>
+            
           </div>
         </div>
     </div>
@@ -67,22 +61,23 @@
 body, html{ 
     height: 100%;
 }
-.bg-style {
+.parallax {
     background-image: url("https://www.abajournal.com/images/main_images/shutterstock_democrat_republican_symbol_on_flag_background.jpg"); 
     
     height: 100%;
 
-    width: 100%;
+   
 
-    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    background-repeat: repeat; 
     background-size: cover; 
-    background-position: center center;
+    background-position: center;
  }
   .navbar {
  margin-bottom: 0;
  border-radius: 0;
 }
-.row.content {height: 1000px}
+.row.content {height: 737px}
 
 .sidenav {
  padding-top: 20px;

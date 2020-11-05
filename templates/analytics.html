@@ -11,7 +11,7 @@
     <title>analytics</title>
 </head>
 <body>
-    <div class="bg-style">
+    <div class="parallax">
       
     <nav class="navbar navbar-inverse visible-xs">
       <div class="container-fluid">
@@ -77,13 +77,20 @@
             <div class="col-sm-6">
               <div class="well">
                 <canvas id="line-chart"></canvas>
-                  <script>new Chart(document.getElementById("line-chart"), {
+                  <script>
+                        new Chart(document.getElementById("line-chart"), {
                           type: 'line',
                           data: {
-                          labels: [2010,2011,2012,2013,2014,2015,2016,2017,2018,2019],
+                          labels: ['{{ data.unemployment_rate_year[0][0] }}','{{ data.unemployment_rate_year[0][1] }}','{{ data.unemployment_rate_year[0][2] }}',
+                          '{{ data.unemployment_rate_year[0][3] }}','{{ data.unemployment_rate_year[0][4] }}','{{ data.unemployment_rate_year[0][5] }}',
+                          '{{ data.unemployment_rate_year[0][6] }}', '{{ data.unemployment_rate_year[0][7] }}','{{ data.unemployment_rate_year[0][8] }}',
+                          '{{ data.unemployment_rate_year[0][9] }}'],
                           datasets: [{ 
-                            data: [86,114,106,106,107,111,133,221,783,2478],
-                            label: "Africa",
+                            data: ['{{ data.unemployment_rate[0][0] }}','{{ data.unemployment_rate[0][1] }}','{{ data.unemployment_rate[0][2] }}',
+                          '{{ data.unemployment_rate[0][3] }}','{{ data.unemployment_rate[0][4] }}','{{ data.unemployment_rate[0][5] }}',
+                          '{{ data.unemployment_rate[0][6] }}', '{{ data.unemployment_rate[0][7] }}','{{ data.unemployment_rate[0][8] }}',
+                          '{{ data.unemployment_rate[0][9] }}'],
+                            label: ['{{data.population_state[0]}}'],
                             fontColor: 'antiquewhtie',
                             borderColor: "#3cba9f",
                             fill: false
@@ -107,13 +114,17 @@
                 <div class="col-sm-6">
                   <div class="well">
                     <canvas id="line-chart2"></canvas>
-                      <script>new Chart(document.getElementById("line-chart2"), {
+                      <script>
+                              new Chart(document.getElementById("line-chart2"), {
                               type: 'line',
                               data: {
                               labels: [2010,2011,2012,2013,2014,2015,2016,2017,2018,2019],
                               datasets: [{ 
-                                data: [86,114,106,106,107,111,133,221,783,2478],
-                                label: "Africa",
+                                data: ['{{data.population[0][0]}}','{{data.population[0][1]}}','{{data.population[0][2]}}',
+                                '{{data.population[0][3]}}','{{data.population[0][4]}}','{{data.population[0][5]}}',
+                                '{{data.population[0][6]}}','{{data.population[0][7]}}','{{data.population[0][8]}}',
+                                '{{data.population[0][9]}}'],
+                                label: ['{{data.population_state[0]}}'],
                                 borderColor: "#3cba9f",
                                 fill: false
                                   }]
@@ -138,13 +149,20 @@
                 <div class="col-sm-6">
                   <div class="well">
                     <canvas id="line-chart3"></canvas>
-                      <script>new Chart(document.getElementById("line-chart3"), {
+                      <script>
+                              new Chart(document.getElementById("line-chart3"), {
                               type: 'line',
                               data: {
-                              labels: [2010,2011,2012,2013,2014,2015,2016,2017,2018,2019],
+                              labels: ['{{ data.poverty_rate_year[0][0] }}','{{ data.poverty_rate_year[0][1] }}','{{ data.poverty_rate_year[0][2] }}',
+                          '{{ data.poverty_rate_year[0][3] }}','{{ data.poverty_rate_year[0][4] }}','{{ data.poverty_rate_year[0][5] }}',
+                          '{{ data.poverty_rate_year[0][6] }}', '{{ data.poverty_rate_year[0][7] }}','{{ data.poverty_rate_year[0][8] }}',
+                          '{{ data.poverty_rate_year[0][9] }}'],
                               datasets: [{ 
-                                data: [86,114,106,106,107,111,133,221,783,2478],
-                                label: "Africa",
+                                data: ['{{ data.poverty_rate[0][0] }}','{{ data.poverty_rate[0][1] }}','{{ data.poverty_rate[0][2] }}',
+                          '{{ data.poverty_rate[0][3] }}','{{ data.poverty_rate[0][4] }}','{{ data.poverty_rate[0][5] }}',
+                          '{{ data.poverty_rate[0][6] }}', '{{ data.poverty_rate[0][7] }}','{{ data.poverty_rate[0][8] }}',
+                          '{{ data.poverty_rate[0][9] }}'],
+                                label: ['{{data.population_state[0]}}'],
                                 borderColor: "#3cba9f",
                                 fill: false
                                   }]
@@ -167,13 +185,23 @@
                     <div class="col-sm-6">
                       <div class="well">
                         <canvas id="line-chart4"></canvas>
-                          <script>new Chart(document.getElementById("line-chart4"), {
+                          <script>
+                                  new Chart(document.getElementById("line-chart4"), {
                                   type: 'line',
                                   data: {
-                                  labels: [2010,2011,2012,2013,2014,2015,2016,2017,2018,2019],
+                                  labels: ['{{data.state_legislature[0][0]}}','{{data.state_legislature[0][1]}}',
+                                    '{{data.state_legislature[0][2]}}','{{data.state_legislature[0][3]}}',
+                                    '{{data.state_legislature[0][4]}}','{{data.state_legislature[0][5]}}',
+                                    '{{data.state_legislature[0][6]}}','{{data.state_legislature[0][7]}}',
+                                    '{{data.state_legislature[0][8]}}','{{data.state_legislature[0][9]}}'],
+                                    label: ['{{data.population_state[0]}}'],
                                   datasets: [{ 
-                                    data: [86,114,106,106,107,111,133,221,783,2478],
-                                    label: "Africa",
+                                    data: ['{{data.state_legislature_year[0][0]}}','{{data.state_legislature_year[0][1]}}',
+                                  '{{data.state_legislature_year[0][2]}}','{{data.state_legislature_year[0][3]}}',
+                                  '{{data.state_legislature_year[0][4]}}','{{data.state_legislature_year[0][5]}}',
+                                  '{{data.state_legislature_year[0][6]}}','{{data.state_legislature_year[0][7]}}',
+                                  '{{data.state_legislature_year[0][8]}}','{{data.state_legislature_year[0][9]}}'],
+                                    label: ['{{data.population_state[0]}}'],
                                     borderColor: "#3cba9f",
                                     fill: false
                                       }]
@@ -205,18 +233,19 @@
         body, html{ 
            height: 100%;
        }
-       .bg-style {
+       .parallax {
            background-image: url("https://www.abajournal.com/images/main_images/shutterstock_democrat_republican_symbol_on_flag_background.jpg") !important; 
        
            height: 100%;
    
-           width: 100%;
-   
-           background-repeat: repeat; 
+        
+          
+           background-attachment: fixed;
+           background-repeat: no-repeat; 
            background-size: cover; 
-           background-position: center center;
+           background-position: center;
        } 
-        .row.content {height: 1000px;}
+        .row.content {height: 780px;}
     
         .sidenav {
             background-color: #0c060628;
