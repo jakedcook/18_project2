@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>landing page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/template.css') }}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="body-styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="parallax">
+        
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>                        
+              </button>
+              <a class="navbar-brand" href="{{ url_for('index') }}">Home</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+            </div>
+          </div>
+        </nav>
+          
+        <div class="container-fluid text-center">    
+          <div class="row content">
+            <div class="col-sm-2 sidenav">
+              <p><a href="https://vote.gov/">Register to voter here!</a></p>
+              <p><a href="https://www.gop.com/">Republican National Committe</a></p>
+              <p><a href="https://democrats.org/">Democratic National Committe</a></p>
+            </div>
+            <div class="col-sm-8 text-left"> 
+              <h1>State Trends</h1>
+              <p>Here you can vizualize the poverty rate, unemployement rate, population, and government party over the last 10 years</p>
+              <hr>
+              <div class="container-fluid">
+                  <form action="" method="POST">
+                    <div class="input-group">
+                        <input class="form-control" type="text" placeholder="state name ex. Texas not texas" name="state_name">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="onsubmit" action="" method="POST"><i class="glyphicon glyphicon-search"></i></button>
+                             
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            
+          </div>
+        </div>
+    </div>
+
+</body>
+<style>
+body, html{ 
+    height: 100%;
+
+}
+.parallax {
+    background-image: url("https://www.abajournal.com/images/main_images/shutterstock_democrat_republican_symbol_on_flag_background.jpg"); 
+    
+    height: 100%;
+
+  
+
+    background-attachment: fixed;
+    background-repeat: repeat; 
+    background-size: cover; 
+    background-position: center;
+ }
+  .navbar {
+ margin-bottom: 0;
+ border-radius: 0;
+}
+.row.content {height: 737px}
+
+.sidenav {
+ padding-top: 20px;
+ background-color: #0c060628;
+ height: 100%;
+}
+
+@media screen and (max-width: 767px) {
+ .sidenav {
+   height: auto;
+   padding: 50px;
+ }
+ .row.content {height:auto;} 
+}
+.col-sm-8{
+   color: antiquewhite;
+}
+</style>
+</html>
